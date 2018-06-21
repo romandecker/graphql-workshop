@@ -8,14 +8,15 @@
     "private": true,
     "scripts": {
         "start": "npm run dev",
-        "dev": "run-p build:watch watch",
-        "build": "babel src/index.js --out-file build/index.js --source-maps",
+        "dev": "npm-run-all build --parallel build:watch watch",
+        "build": "babel src --out-dir build --source-maps",
         "build:watch": "npm run build -- --watch",
         "watch": "nodemon --watch build build/index.js",
         "postinstall": "npm run build"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
+        "babel-plugin-transform-runtime": "^6.23.0",
         "babel-preset-env": "^1.7.0",
         "express": "^4.16.3",
         "graphql": "^0.13.2",

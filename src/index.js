@@ -1,4 +1,10 @@
 import 'source-map-support/register';
-import express from 'express';
+import { graphql } from 'graphql';
 
-throw new Error('Oh no!');
+import schema from './lib/schema';
+
+async function main() {
+  // use graphql here!
+}
+
+main();
