@@ -6,11 +6,11 @@ const keyById = keyBy('id');
 const petsById = keyById(pets);
 const toysById = keyById(toys);
 
-export const getPets = () => pets;
-export const getToys = () => toys;
-
 const createSubitemGetter = (subitemsById, subitemsIdsPropertyName) => (item) =>
     item[subitemsIdsPropertyName].map((id) => subitemsById[id]);
+
+export const getPets = () => pets;
+export const getToys = () => toys;
 
 export const getFriendsByPet = createSubitemGetter(petsById, 'friendIds');
 export const getPetById = (id) => petsById[id];
