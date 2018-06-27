@@ -7,10 +7,11 @@ import schema from './lib/schema';
 const app = express();
 
 app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema
-  })
+    '/graphql',
+    graphqlHTTP({
+        schema,
+        graphiql: true,
+    }),
 );
 
 // eslint-disable-next-line no-console
