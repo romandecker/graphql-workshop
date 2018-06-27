@@ -12,7 +12,8 @@
         "build": "babel src --out-dir build --source-maps",
         "build:watch": "npm run build -- --watch",
         "watch": "nodemon --watch build build/index.js",
-        "postinstall": "npm run build"
+        "postinstall": "npm-run-all --parallel build ui:install",
+        "ui:install": "cd ui/ && yarn"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
