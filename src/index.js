@@ -1,5 +1,4 @@
 import 'source-map-support/register';
-import { graphql } from 'graphql';
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
 
@@ -14,4 +13,5 @@ app.use(
   })
 );
 
+// eslint-disable-next-line no-console
 app.listen(7777, () => console.log('GraphQL endpoint listening on http://localhost:7777/graphql'));
