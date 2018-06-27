@@ -5,9 +5,11 @@ import {
     GraphQLList,
     GraphQLString,
 } from 'graphql';
+
 import Pet from './types/Pet';
 import Toy from './types/Toy';
-import { getPets, getPetById, getToys, getToyById } from './db';
+import ToyInput from './types/ToyInput';
+import { getPets, getPetById, getToys, getToyById, createToy } from './db';
 
 export default new GraphQLSchema({
     query: new GraphQLObjectType({
@@ -34,6 +36,19 @@ export default new GraphQLSchema({
                     id: { type: new GraphQLNonNull(GraphQLString) },
                 },
                 resolve: (parent, args) => getToyById(args.id),
+            },
+        },
+    }),
+
+    mutation: new GraphQLObjectType({
+        name: 'Mutation',
+        fields: {
+            createToy: {
+                type: new GraphQLNonNull(Toy),
+                args: {
+                    toyData: { type: new GraphQLNonNull(ToyInput) },
+                },
+                resolve: (parent, { toyData }) => createToy(toyData),
             },
         },
     }),
