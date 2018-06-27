@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider, Query, Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            toyName: '',
+        };
+    }
+
+    handleToyNameChange = (event) => this.setState({ toyName: event.currentTarget.value });
+
+    render() {
+        return (
+            <div className="App">
+                Toys:
+                <ul>
+                    <li>No toys :/</li>
+                </ul>
+                <div>
+                    <input
+                        type="text"
+                        value={this.state.toyName}
+                        onChange={this.handleToyNameChange}
+                    />
+                    <button>Add toy</button>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;

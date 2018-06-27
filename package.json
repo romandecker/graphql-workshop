@@ -7,13 +7,14 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "start": "npm run dev",
+        "start": "npm-run-all --parallel dev ui:start",
         "dev": "npm-run-all build --parallel build:watch watch",
         "build": "babel src --out-dir build --source-maps",
         "build:watch": "npm run build -- --watch",
         "watch": "nodemon --watch build build/index.js",
         "postinstall": "npm-run-all --parallel build ui:install",
-        "ui:install": "cd ui/ && yarn"
+        "ui:install": "cd ui/ && yarn",
+        "ui:start": "cd ui/ && yarn start"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
