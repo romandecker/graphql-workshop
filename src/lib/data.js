@@ -11,7 +11,6 @@ export const pets = [
         name: 'Flipper',
         species: 'DOLPHIN',
         friendIds: [
-            '4edf49c8-4fe8-4731-abde-aa54c4baec92',
             'e8b036e9-25e4-4743-8b27-2ac1f83ae71d',
             'aadeadd5-82ad-4000-bae6-4b849a82db51',
             '8e2e28cd-fc9d-4872-84a6-e09ded822016',
