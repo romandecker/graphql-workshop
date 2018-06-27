@@ -34,6 +34,7 @@ export const pets = [
         id: '6ac0f202-8af0-4206-bf9e-457506236a5b',
         name: 'Grumpy Cat',
         species: 'CAT',
+        friendIds: [],
         toysPlayedWithIds: ['feb48c9f-b622-4dc6-acd2-5202727a67ba'],
     },
     {
